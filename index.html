@@ -24,7 +24,7 @@
 </head>
 <body>
   <div class="card">
-     <h1>CALCULATE YOUR ELECTRICITY BILL YOURSELF</h1>
+     <h2>CALCULATE YOUR ELECTRICITY BILL YOURSELF</h2>
     <p>
       Enter a Number Of Units to calculate the output:
       <input type="number" id="inputNumber" min="0" max="180" />
@@ -50,7 +50,7 @@
           output = 0;
         }
         
-          document.getElementById("output").innerHTML = output;
+          document.getElementById("output").innerHTML ='Rs '+output;
      }
      document.getElementById("inputNumber").addEventListener("input", unitcalculateWithFixedCharge);
 
