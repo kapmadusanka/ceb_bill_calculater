@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Centered Card Layout</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      width: 400px;
+      padding: 24px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+     <h1>Calculate Output Example</h1>
+    <p>
+      Enter a number between 0 and 180 to calculate the output:
+      <input type="number" id="inputNumber" min="0" max="180" />
+    </p>
+    <p>Output: <span id="output"></span></p>
+  </div>
+</body>
+ <script>
+    function unitcalculateWithFixedCharge() {
+      const inputNumber = parseInt(document.getElementById("inputNumber").value);
+     let output = 0;
+        if (inputNumber >= 0 && inputNumber <= 30) {
+          output = inputNumber * 30+400;
+        } else if (inputNumber >= 31 && inputNumber <= 60) {
+          output = 30 * 30 + (inputNumber - 30) * 37+550;
+        } else if (inputNumber >= 61 && inputNumber <= 90) {
+          output = 30 * 30 + 30 * 37 + (inputNumber - 60) * 42+650;
+        } else if (inputNumber >= 91 && inputNumber <= 180) {
+          output = 30 * 30 + 30 * 37 + 30 * 42 + (inputNumber - 90) * 50+1500;
+        } else if (inputNumber > 180) {
+          output = 30 * 30 + 30 * 37 + 30 * 42 + 90 * 50 + (inputNumber - 180) * 75+2000;
+        } else {
+          output = 0;
+        }
+        
+          document.getElementById("output").innerHTML = output;
+     }
+     document.getElementById("inputNumber").addEventListener("input", unitcalculateWithFixedCharge);
+
+
+    </script>
+</html>
